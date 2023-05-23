@@ -1,9 +1,6 @@
 <script lang="ts" setup>
+import { ref } from "vue";
 const keyword = ref("");
-
-const handleClick = () => {
-  // ここに生成する処理をかく
-};
 </script>
 
 <template>
@@ -12,6 +9,8 @@ const handleClick = () => {
     <input type="text" v-model="keyword" />
   </div>
   <div>
-    <button type="button" @click="handleClick">テキスト生成</button>
+    <button type="button">テキスト生成</button>
   </div>
+  <NuxtLink to="/count">Count Page</NuxtLink>
+  <NuxtLink to="/checks">Check Page</NuxtLink>
 </template>
