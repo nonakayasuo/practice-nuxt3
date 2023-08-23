@@ -9,7 +9,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.0.1",
     "@types/node": "^18",
-    "nuxt": "^3.4.3"
+    "@vitejs/plugin-vue": "^4.3.3",
+    "@vue/test-utils": "^2.4.1",
+    "happy-dom": "^10.11.0",
+    "nuxt": "^3.4.3",
+    "nuxt-vitest": "^0.10.2",
+    "vitest": "^0.34.2"
   }
 }
