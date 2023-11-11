@@ -1,24 +1,15 @@
 <script setup lang="ts">
-const widthInit = Math.round(Math.random() * 10);
-const heightInit = Math.round(Math.random() * 10);
-const rectangle = reactive({ width: widthInit, height: heightInit });
-const area = computed((): number => {
-  return rectangle.width * rectangle.height;
-});
-setInterval(
-  (): void => {
-    rectangle.width = Math.round(Math.random() * 10);
-    rectangle.height = Math.round(Math.random() * 10);
-  },
-  1000,
-  true
-);
+const msg = shallowRef("まだ");
+const onButtonClick = (label: string, event: Event): void => {
+  const target = event.target as HTMLButtonElement;
+  const text = target.innerText;
+  msg.value = `${label}と${text}`;
+};
 </script>
 
 <template>
   <p>
-    縦{{ rectangle.height }}で横が{{ rectangle.width }}の長方形の面積は{{
-      area
-    }}
+    {{ msg }}
   </p>
+  <button v-on:click="onButtonClick('Hello', $event)">こんにちは</button>
 </template>
